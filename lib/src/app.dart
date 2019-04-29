@@ -5,7 +5,6 @@ import 'screens/giftpage.dart';
 import 'screens/storepage.dart';
 import 'screens/settingspage.dart';
 
-
 class App extends StatefulWidget {
   @override
   _AppState createState() => _AppState();
@@ -13,7 +12,13 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   int _selectedIndex = 0;
-  final _pages = [HomePage(), OrderPage(), GiftPage(), StorePage(), SettingPage()];
+  final _pages = [
+    HomePage(),
+    OrderPage(),
+    GiftPage(),
+    StorePage(),
+    SettingPage()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -29,29 +34,49 @@ class _AppState extends State<App> {
           fixedColor: Color.fromRGBO(220, 20, 60, 1.0),
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(Icons.home,),
-              title: Text('Home',),
+              icon: Icon(
+                Icons.home,
+              ),
+              title: Text(
+                'Home',
+              ),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart,),
-              title: Text('Order',),
+              icon: Icon(
+                Icons.shopping_cart,
+              ),
+              title: Text(
+                'Order',
+              ),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.card_giftcard,),
-              title: Text('Gift',),
+              icon: Icon(
+                Icons.card_giftcard,
+              ),
+              title: Text(
+                'Gift',
+              ),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.store,),
-              title: Text('Stores',),
+              icon: Icon(
+                Icons.store,
+              ),
+              title: Text(
+                'Stores',
+              ),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.settings,),
-              title: Text('Settings',),
+              icon: Icon(
+                Icons.settings,
+              ),
+              title: Text(
+                'Settings',
+              ),
             ),
           ],
           currentIndex: _selectedIndex,
-          onTap: (int index){
-            this.setState((){
+          onTap: (int index) {
+            this.setState(() {
               _selectedIndex = index;
             });
           },
