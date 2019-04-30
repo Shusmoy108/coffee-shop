@@ -54,7 +54,7 @@ class _AppState extends State<App> {
                 Icons.card_giftcard,
               ),
               title: Text(
-                'Gift',
+                'Card',
               ),
             ),
             BottomNavigationBarItem(
