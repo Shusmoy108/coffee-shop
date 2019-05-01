@@ -11,7 +11,7 @@ class BeginPage extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.indigo,
             bottom: TabBar(
-              indicatorColor: Colors.lime,
+              indicatorColor: Colors.green,
               labelColor: Colors.black,
               unselectedLabelColor: Colors.grey,
               tabs: [
@@ -40,7 +40,7 @@ class BeginPage extends StatelessWidget {
           body: TabBarView(
             children: [
               LogIn(),
-              Icon(Icons.directions_transit),
+              LogIn(),
             ],
           ),
         ),
@@ -52,7 +52,6 @@ class BeginPage extends StatelessWidget {
 class LogIn extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return new LogInState();
   }
 }
@@ -64,18 +63,33 @@ class LogInState extends State<LogIn> {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      margin: EdgeInsets.all(20),
-      child: Form(
-        key: formKey,
-        child: ListView(
-          children: <Widget>[
-            emailField(),
-            passwordField(),
-            loginButton(),
-          ],
+        decoration: new BoxDecoration(
+          image: new DecorationImage(
+            image: new ExactAssetImage('images/starbucks.jpg'),
+            fit: BoxFit.cover,
+          ),
         ),
-      ),
-    );
+        child: new Container(
+          margin: EdgeInsets.all(20),
+          child: Form(
+            key: formKey,
+            child: ListView(
+              children: <Widget>[
+                // Image.asset(
+                //   'images/starbucks.jpg',
+                //   width: 600,
+                //   height: 400,
+                // ),
+                Padding(
+                  padding: EdgeInsets.only(top: 100),
+                ),
+                emailField(),
+                passwordField(),
+                loginButton(),
+              ],
+            ),
+          ),
+        ));
   }
 
   Widget emailField() {
