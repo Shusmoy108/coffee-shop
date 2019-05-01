@@ -22,6 +22,8 @@ dependencies:
   #google_maps_flutter: ^0.5.7
   flutter_map: any
   latlong: ^0.6.1
+  qrcode_reader: ^0.4.4
+  unicorndial: ^1.1.5
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -70,6 +72,20 @@ flutter:
   - images/whitechocomocha.jpg
   - images/caflattebig.jpg
   - images/oahead.jpg
+  - images/cc0.png
+  - images/cc1.png
+  - images/cc2.png
+  - images/cc3.png
+  - images/cc4.png
+  - images/cc5.png
+  - images/cc6.png
+  - images/cc7.png
+  - images/cc8.png
+  - images/cc9.png
+  - images/cc10.png
+  - images/cc11.png
+  - images/cc12.png
+  - images/lcard.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
 

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'screens/homepage.dart';
 import 'screens/orderpage.dart';
-import 'screens/giftpage.dart';
-import 'screens/storepage.dart';
-import 'screens/settingspage.dart';
+import 'screens/giftpage/gift_page.dart';
+import 'screens/storepage/store_page.dart';
+import 'screens/settingspage/settings_page.dart';
 
 class App extends StatefulWidget {
   @override
@@ -46,7 +46,7 @@ class _AppState extends State<App> {
                 Icons.shopping_cart,
               ),
               title: Text(
-                'Order',
+                'Menu',
               ),
             ),
             BottomNavigationBarItem(
@@ -54,7 +54,7 @@ class _AppState extends State<App> {
                 Icons.card_giftcard,
               ),
               title: Text(
-                'Gift',
+                'Card',
               ),
             ),
             BottomNavigationBarItem(
