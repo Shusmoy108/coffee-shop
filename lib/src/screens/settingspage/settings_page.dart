@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'profile_widget.dart';
 
 class SettingPage extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -7,12 +8,12 @@ class SettingPage extends StatelessWidget {
         title: Text('Settings'),
         backgroundColor: Color.fromRGBO(220, 20, 60, 1.0),
         elevation: 0.0,
+        leading: Icon(Icons.settings),
       ),
-      body: Container(
-        padding: EdgeInsets.symmetric(vertical: 200, horizontal: 40.0),
-        child: Center(
-          child: Text('Profile page/Setttings'),
-        ),
+      body: ListView(
+        children: <Widget>[
+          ProfileWidget(),
+        ],
       ),
     );
   }
