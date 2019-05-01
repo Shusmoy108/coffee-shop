@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'screens/homepage.dart';
 import 'screens/orderpage.dart';
 import 'screens/giftpage/gift_page.dart';
-import 'screens/storepage.dart';
+import 'screens/storepage/store_page.dart';
 import 'screens/settingspage.dart';
 
 class App extends StatefulWidget {

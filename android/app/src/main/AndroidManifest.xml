@@ -18,7 +18,7 @@
         android:label="coffeshop"
         android:icon="@mipmap/cclogo">
         <!--<meta-data android:name="com.google.android.geo.API_KEY"-->
-            <!--android:value="AIzaSyCWUzhSK3zQUjiXUJUmu3KNd87mpPczJic"/>-->
+            <!--android:value="AIzaSyBMplZgmKR7RXamui_FI19mYAUABIgrXHQ"/>-->
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
