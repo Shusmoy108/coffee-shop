@@ -89,6 +89,9 @@ flutter:
   - images/cc12.png
   - images/lcard.jpg
   - images/logback.jpg
+  - images/pwalkicon.png
+  - images/ccupicon.png
+  - images/ordericon.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
 
