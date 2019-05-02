@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-import '../resources/dummydata.dart';
+import '../../resources/dummydata.dart';
 
 String name;
 
-class DetailsPage extends StatefulWidget {
-  DetailsPage(String n){name =n;}
+class ItemDetailsPage extends StatefulWidget {
+  ItemDetailsPage(String n) {
+    name = n;
+  }
 
   @override
-  _DetailsPageState createState() => _DetailsPageState();
+  _ItemDetailsPageState createState() => _ItemDetailsPageState();
 }
 
-class _DetailsPageState extends State<DetailsPage> {
+class _ItemDetailsPageState extends State<ItemDetailsPage> {
   List _sizes = ['Short', 'Tall', 'Grande', 'Venti'];
   List _flavours = ['Milk', 'Orange', 'Banana'];
   List _shotoptions = ['2 shots', '3 shots', '4 shots'];
@@ -25,7 +27,6 @@ class _DetailsPageState extends State<DetailsPage> {
   String _currentflavour;
   String _currentshot;
   String _currenttopping;
-
 
   @override
   void initState() {
@@ -42,77 +43,69 @@ class _DetailsPageState extends State<DetailsPage> {
     super.initState();
   }
 
-  List<DropdownMenuItem<String>> getSizeMenuItems(){
+  List<DropdownMenuItem<String>> getSizeMenuItems() {
     List<DropdownMenuItem<String>> items = List();
-    for (String size in _sizes){
-      items.add(
-        DropdownMenuItem(
-          value: size,
-          child: Text(size),
-        )
-      );
+    for (String size in _sizes) {
+      items.add(DropdownMenuItem(
+        value: size,
+        child: Text(size),
+      ));
     }
     return items;
   }
 
-  void changeSizeMenuItem(String value){
+  void changeSizeMenuItem(String value) {
     setState(() {
       _currentsize = value;
     });
   }
 
-  List<DropdownMenuItem<String>> getFlavourMenuItems(){
+  List<DropdownMenuItem<String>> getFlavourMenuItems() {
     List<DropdownMenuItem<String>> items = List();
-    for (String flavour in _flavours){
-      items.add(
-          DropdownMenuItem(
-            value: flavour,
-            child: Text(flavour),
-          )
-      );
+    for (String flavour in _flavours) {
+      items.add(DropdownMenuItem(
+        value: flavour,
+        child: Text(flavour),
+      ));
     }
     return items;
   }
 
-  void changeFlavourMenuItem(String value){
+  void changeFlavourMenuItem(String value) {
     setState(() {
       _currentflavour = value;
     });
   }
 
-  List<DropdownMenuItem<String>> getShotMenuItems(){
+  List<DropdownMenuItem<String>> getShotMenuItems() {
     List<DropdownMenuItem<String>> items = List();
-    for (String shot in _shotoptions){
-      items.add(
-          DropdownMenuItem(
-            value: shot,
-            child: Text(shot),
-          )
-      );
+    for (String shot in _shotoptions) {
+      items.add(DropdownMenuItem(
+        value: shot,
+        child: Text(shot),
+      ));
     }
     return items;
   }
 
-  void changeShotMenuItem(String value){
+  void changeShotMenuItem(String value) {
     setState(() {
       _currentshot = value;
     });
   }
 
-  List<DropdownMenuItem<String>> getToppingMenuItems(){
+  List<DropdownMenuItem<String>> getToppingMenuItems() {
     List<DropdownMenuItem<String>> items = List();
-    for (String topping in _toppings){
-      items.add(
-          DropdownMenuItem(
-            value: topping,
-            child: Text(topping),
-          )
-      );
+    for (String topping in _toppings) {
+      items.add(DropdownMenuItem(
+        value: topping,
+        child: Text(topping),
+      ));
     }
     return items;
   }
 
-  void changeToppingMenuItem(String value){
+  void changeToppingMenuItem(String value) {
     setState(() {
       _currenttopping = value;
     });
@@ -164,15 +157,14 @@ class _DetailsPageState extends State<DetailsPage> {
                 decoration: BoxDecoration(
                     border: Border(
                         bottom: BorderSide(
-                          color: Colors.grey,
-                        )
-                    )
-                ),
+                  color: Colors.grey,
+                ))),
               ),
             ),
             Container(
-              padding: EdgeInsets.only(left: 40.0, top: 10.0, right: 40.0, bottom: 10.0),
-              child:DropdownButton(
+              padding: EdgeInsets.only(
+                  left: 40.0, top: 10.0, right: 40.0, bottom: 10.0),
+              child: DropdownButton(
                 value: _currentsize,
                 items: _sizeMenuItems,
                 onChanged: changeSizeMenuItem,
@@ -181,8 +173,9 @@ class _DetailsPageState extends State<DetailsPage> {
               ),
             ),
             Container(
-              padding: EdgeInsets.only(left: 40.0, top: 10.0, right: 40.0, bottom: 10.0),
-              child:DropdownButton(
+              padding: EdgeInsets.only(
+                  left: 40.0, top: 10.0, right: 40.0, bottom: 10.0),
+              child: DropdownButton(
                 value: _currentflavour,
                 items: _flavourMenuItems,
                 onChanged: changeFlavourMenuItem,
@@ -191,8 +184,9 @@ class _DetailsPageState extends State<DetailsPage> {
               ),
             ),
             Container(
-              padding: EdgeInsets.only(left: 40.0, top: 10.0, right: 40.0, bottom: 10.0),
-              child:DropdownButton(
+              padding: EdgeInsets.only(
+                  left: 40.0, top: 10.0, right: 40.0, bottom: 10.0),
+              child: DropdownButton(
                 value: _currentshot,
                 items: _shotMenuItems,
                 onChanged: changeShotMenuItem,
@@ -201,8 +195,9 @@ class _DetailsPageState extends State<DetailsPage> {
               ),
             ),
             Container(
-              padding: EdgeInsets.only(left: 40.0, top: 10.0, right: 40.0, bottom: 10.0),
-              child:DropdownButton(
+              padding: EdgeInsets.only(
+                  left: 40.0, top: 10.0, right: 40.0, bottom: 10.0),
+              child: DropdownButton(
                 value: _currenttopping,
                 items: _toppingMenuItems,
                 onChanged: changeToppingMenuItem,
@@ -210,15 +205,11 @@ class _DetailsPageState extends State<DetailsPage> {
                 isExpanded: true,
               ),
             ),
-
-
-
           ],
         ),
       ),
-
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: (){
+        onPressed: () {
           Navigator.pop(context);
         },
         icon: Icon(Icons.add),

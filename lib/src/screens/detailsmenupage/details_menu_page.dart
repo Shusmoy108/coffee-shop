@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import '../widgets/biglisttile.dart';
-import '../resources/dummydata.dart';
+import 'big_list_tile.dart';
+import '../../resources/dummydata.dart';
 
-class ItemsPage extends StatelessWidget {
+class DetailsMenuPage extends StatelessWidget {
   final String title;
 
-  ItemsPage(this.title);
+  DetailsMenuPage(this.title);
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +17,12 @@ class ItemsPage extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
-            onPressed: (){},
+            onPressed: () {},
           )
         ],
       ),
       body: Container(
-          color: Color.fromRGBO(236, 235, 231, 1.0),
+        color: Color.fromRGBO(236, 235, 231, 1.0),
         child: CustomScrollView(
           slivers: <Widget>[
             titleRow('Latte', lattedata),
@@ -41,7 +41,7 @@ class ItemsPage extends StatelessWidget {
     );
   }
 
-  Widget titleRow(String t, List<List<String>> l){
+  Widget titleRow(String t, List<List<String>> l) {
     return SliverList(
       delegate: SliverChildListDelegate([
         Container(
@@ -59,29 +59,30 @@ class ItemsPage extends StatelessWidget {
             children: <Widget>[
               Text(
                 t,
-                style: TextStyle(
-                    fontSize: 20.0
-                ),
+                style: TextStyle(fontSize: 20.0),
               ),
               FlatButton(
-                onPressed: (){},
+                onPressed: () {},
                 child: Text(
-                  'See all('+l.length.toString()+')',
+                  'See all(' + l.length.toString() + ')',
                 ),
               ),
             ],
           ),
         ),
-        SizedBox(height: 10.0,),
+        SizedBox(
+          height: 10.0,
+        ),
       ]),
     );
   }
 
-  Widget buildGridList(List<List<String>> list){
+  Widget buildGridList(List<List<String>> list) {
     return SliverGrid(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+      gridDelegate:
+          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       delegate: SliverChildListDelegate(
-        List.generate(list.length, (index){
+        List.generate(list.length, (index) {
           return BigListTile(
             name: list[index][0],
             imgUrl: list[index][1],

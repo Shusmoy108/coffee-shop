@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
-import 'app.dart';
+import '../mainpage/main_page.dart';
+
+class LoginRegisterPage extends StatefulWidget {
+  @override
+  _LoginRegisterPageState createState() => _LoginRegisterPageState();
+}
+
+class _LoginRegisterPageState extends State<LoginRegisterPage> {
+  @override
+  Widget build(BuildContext context) {
+    return BeginPage();
+  }
+}
 
 class BeginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 2,
         child: Scaffold(
@@ -65,7 +78,7 @@ class LogInState extends State<LogIn> {
     return new Container(
         decoration: new BoxDecoration(
           image: new DecorationImage(
-            image: new ExactAssetImage('images/starbucks.jpg'),
+            image: new ExactAssetImage('images/logback.jpg'),
             fit: BoxFit.cover,
           ),
         ),
@@ -138,7 +151,7 @@ class LogInState extends State<LogIn> {
   void login() {
     if (_email == 'saku@' && _password == 'madari') {
       var router =
-          new MaterialPageRoute(builder: (BuildContext context) => new App());
+          new MaterialPageRoute(builder: (BuildContext context) => MainPage());
       Navigator.of(context).pushReplacement(router);
     }
   }

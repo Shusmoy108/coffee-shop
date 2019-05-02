@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import '../screens/detailspage.dart';
-import '../Animations/scale_page_transition.dart';
+import '../itemdetailspage/item_details_page.dart';
+import '../../Animations/scale_page_transition.dart';
 
 class BigListTile extends StatelessWidget {
-
   final String name;
   final String imgUrl;
 
@@ -12,10 +11,10 @@ class BigListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
         Navigator.push(
           context,
-          ScalePageTransition(animatingWidget: DetailsPage(name)),
+          ScalePageTransition(animatingWidget: ItemDetailsPage(name)),
         );
       },
       child: Container(
@@ -31,9 +30,7 @@ class BigListTile extends StatelessWidget {
             ),
             Text(
               name,
-              style: TextStyle(
-                  color: Colors.black87
-              ),
+              style: TextStyle(color: Colors.black87),
             ),
           ],
         ),

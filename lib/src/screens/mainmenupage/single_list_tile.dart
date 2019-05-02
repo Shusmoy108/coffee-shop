@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import '../screens/itemspage.dart';
+import '../detailsmenupage/details_menu_page.dart';
 
-class SimpleListTile extends StatelessWidget {
+class SingleListTile extends StatelessWidget {
+  final String name;
+  final String imgUrl;
 
-  String name;
-  String imgUrl;
-
-  SimpleListTile({this.name, this.imgUrl});
+  SingleListTile({this.name, this.imgUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +16,11 @@ class SimpleListTile extends StatelessWidget {
         height: 40,
       ),
       title: Text(name),
-      onTap: (){
+      onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute<Map>(
-            builder: (BuildContext context){
-              return ItemsPage(name);
+            builder: (BuildContext context) {
+              return DetailsMenuPage(name);
             },
           ),
         );
