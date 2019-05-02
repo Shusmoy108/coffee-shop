@@ -32,21 +32,24 @@ class _ProfileWidgetState extends State<ProfileWidget> {
 
   Widget profileHeader() {
     return Container(
-      padding: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 5.0),
-      decoration: BoxDecoration(
-        border: Border(
-          bottom: BorderSide(
-            color: Colors.grey,
+      padding: EdgeInsets.symmetric(horizontal: 15.0),
+      child: Container(
+        padding: EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 5.0),
+        decoration: BoxDecoration(
+          border: Border(
+            bottom: BorderSide(
+              color: Colors.grey,
+            ),
           ),
         ),
-      ),
-      child: Text(
-        'Your Profile',
-        style: TextStyle(
-          fontSize: 16.0,
-          fontWeight: FontWeight.bold,
-          color: Colors.black,
-          fontFamily: 'Merienda',
+        child: Text(
+          'Your Profile',
+          style: TextStyle(
+            fontSize: 16.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+            fontFamily: 'Merienda',
+          ),
         ),
       ),
     );

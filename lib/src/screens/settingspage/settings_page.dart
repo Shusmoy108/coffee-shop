@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'profile_widget.dart';
+import 'support_n_legal.dart';
+import 'log_out.dart';
 
 class SettingPage extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -13,6 +15,8 @@ class SettingPage extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           ProfileWidget(),
+          SupportAndLegal(),
+          LogOut(),
         ],
       ),
     );
