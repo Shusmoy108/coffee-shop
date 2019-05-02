@@ -6,7 +6,7 @@ class BeginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: DefaultTabController(
-        length: 3,
+        length: 2,
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.indigo,
