@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'loyalty_card_ui.dart';
 import 'terms_and_conditions.dart';
 import 'package:qrcode_reader/qrcode_reader.dart';
+import '../cardhistorypage/card_history_page.dart';
 
 class GiftPage extends StatefulWidget {
   @override
@@ -92,7 +93,15 @@ class _GiftPageState extends State<GiftPage> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.history),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return CardHistoryPage();
+                  },
+                ),
+              );
+            },
           ),
         ],
       ),

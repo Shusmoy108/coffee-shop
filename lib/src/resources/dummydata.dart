@@ -78,4 +78,20 @@ final americanodata = [
   ['Xubayer Americano', 'images/whitechocomocha.jpg']
 ];
 
-final description = "Our dark, rich espresso is balanced with steamed milk and topped with a light layer of foam. A perfect milk-forward wardm up.";
+final description =
+    "Our dark, rich espresso is balanced with steamed milk and topped with a light layer of foam. A perfect milk-forward wardm up.";
+
+final cardhistoty = [
+  ['Free drinks claimed', '25/4/2019, Thursday'],
+  ['12/12 Slot completed', '23/4/2019, Tuesday'],
+  ['Free drinks claimed', '9/4/2019, Tuesday'],
+  ['12/12 Slot completed', '6/4/2019, Saturday'],
+  ['Free drinks claimed', '25/4/2019, Thursday'],
+  ['12/12 Slot completed', '23/4/2019, Tuesday'],
+  ['Free drinks claimed', '9/4/2019, Tuesday'],
+  ['12/12 Slot completed', '6/4/2019, Saturday'],
+  ['Free drinks claimed', '25/4/2019, Thursday'],
+  ['12/12 Slot completed', '23/4/2019, Tuesday'],
+  ['Free drinks claimed', '9/4/2019, Tuesday'],
+  ['12/12 Slot completed', '6/4/2019, Saturday'],
+];
