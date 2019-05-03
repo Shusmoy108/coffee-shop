@@ -95,3 +95,29 @@ final cardhistoty = [
   ['Free drinks claimed', '9/4/2019, Tuesday'],
   ['12/12 Slot completed', '6/4/2019, Saturday'],
 ];
+
+final searchdata = [
+  'Caffe Latte',
+  'Iced Caffe Latte',
+  'Hot Caffe Latte',
+  'Flat White',
+  'White Chocolate Mocha',
+  'Iced White Chocolate Mocha',
+  'Caffe Mocha',
+  'Latte Macchiato',
+  'Caramel Macchiato',
+  'Caffe Americano',
+  'Prottoy Americano',
+  'Shusu Americano',
+  'Xubayer Americano',
+  'Classic Iced Cappuccino',
+  'Cold Foam Iced Cappucino',
+];
+
+final recentsearchdata = [
+  'Flat White',
+  'White Chocolate Mocha',
+  'Iced White Chocolate Mocha',
+  'Caffe Mocha',
+  'Latte Macchiato',
+];

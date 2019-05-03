@@ -4,8 +4,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 android:shape="rectangle">
 <gradient
     android:angle="90"
-    android:startColor="#02A5DA"
-    android:centerColor="#81DFFE"
-    android:endColor="#01C1FF"
+    android:startColor="#D13247"
+    android:centerColor="#D30221"
+    android:endColor="#D13247"
     android:type="linear"/>
 </shape>
+

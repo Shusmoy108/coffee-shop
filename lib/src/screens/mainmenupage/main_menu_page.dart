@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'simple_list_widget.dart';
+import 'search_page.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../resources/dummydata.dart';
 
 class MainMenuPage extends StatefulWidget {
@@ -34,7 +36,6 @@ class _MainMenuPageState extends State<MainMenuPage>
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
-              leading: Icon(Icons.camera),
               title: Text('Order Now'),
               backgroundColor: Color.fromRGBO(220, 20, 60, 1.0),
               pinned: true,
@@ -54,6 +55,17 @@ class _MainMenuPageState extends State<MainMenuPage>
                   ),
                 ],
               ),
+              actions: <Widget>[
+                IconButton(
+                  icon: Icon(Icons.search),
+                  onPressed: () {
+                    showSearch(
+                      context: context,
+                      delegate: SearchPage(),
+                    );
+                  },
+                )
+              ],
             ),
           ];
         },

@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'todays_offer.dart';
 import 'personal_record.dart';
 import 'add_point.dart';
+import 'point_widget.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.camera),
-        title: Text('Welcome, User'),
+        title: Text('Welcome, Prottoy'),
         backgroundColor: Color.fromRGBO(220, 20, 60, 1.0),
         elevation: 0.0,
       ),
@@ -27,6 +27,10 @@ class HomePage extends StatelessWidget {
                 PersonalRecord(),
                 SizedBox(
                   height: 50,
+                ),
+                PointWidget(),
+                SizedBox(
+                  height: 20,
                 ),
                 AddPoint(),
                 Container(

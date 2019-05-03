@@ -37,6 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
       child: Form(
         key: regFormKey,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             usernameField(),
             emailField(),

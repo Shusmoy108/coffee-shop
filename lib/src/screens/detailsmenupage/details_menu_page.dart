@@ -14,12 +14,6 @@ class DetailsMenuPage extends StatelessWidget {
         title: Text(title),
         elevation: 0.0,
         backgroundColor: Color.fromRGBO(220, 20, 60, 1.0),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: () {},
-          )
-        ],
       ),
       body: Container(
         color: Color.fromRGBO(236, 235, 231, 1.0),
