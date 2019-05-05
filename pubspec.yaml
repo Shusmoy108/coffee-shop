@@ -92,6 +92,7 @@ flutter:
   - images/pwalkicon.png
   - images/ccupicon.png
   - images/ordericon.png
+  - images/coffeesmoke.gif
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
 

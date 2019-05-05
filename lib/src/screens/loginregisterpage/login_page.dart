@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../mainpage/main_page.dart';
+import 'register_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
   String email;
   String password;
 
@@ -22,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void login() {
-    if (email == 'abc@xyz.com' && password == '12345') {
+    if (email == 'ab@xy.com' && password == '12345') {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (BuildContext context) {
@@ -35,30 +36,54 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Color.fromRGBO(255, 255, 255, 1.0),
-        borderRadius: BorderRadius.only(
-          bottomRight: Radius.circular(5.0),
-          bottomLeft: Radius.circular(5.0),
-        ),
+    return Scaffold(
+      body: ListView(
+        children: <Widget>[
+          Stack(
+            alignment: Alignment.bottomCenter,
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                color: Colors.white,
+                child: Form(
+                  key: loginFormKey,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      animatedCcup(),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      emailField(),
+                      passwordField(),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      submitButton(),
+                      forgetPassowrd(),
+                      noAccount(),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
-      padding: EdgeInsets.symmetric(horizontal: 10.0),
-      child: Form(
-        key: loginFormKey,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            emailField(),
-            passwordField(),
-            SizedBox(
-              height: 10.0,
+    );
+  }
+
+  Widget animatedCcup() {
+    return Container(
+      child: Center(
+        child: Container(
+          //width: 100,
+          // height: 100,
+          child: Image(
+            image: AssetImage(
+              'images/coffeesmoke.gif',
             ),
-            submitButton(),
-            forgetPassowrd(),
-            stylishOR(),
-            fbgoogle(),
-          ],
+          ),
         ),
       ),
     );
@@ -104,7 +129,9 @@ class _LoginPageState extends State<LoginPage> {
         ),
         suffix: GestureDetector(
           onTap: toggleObscureFlag,
-          child: Icon(Icons.remove_red_eye),
+          child: _shouldObscureText
+              ? Icon(FontAwesomeIcons.solidEye)
+              : Icon(FontAwesomeIcons.solidEyeSlash),
         ),
       ),
       obscureText: _shouldObscureText,
@@ -150,93 +177,41 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget stylishOR() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [
-                  Colors.black12,
-                  Colors.black,
-                ],
-                begin: FractionalOffset(0.0, 0.0),
-                end: FractionalOffset(1.0, 1.0),
-                stops: [0.0, 1.0],
-                tileMode: TileMode.clamp),
+  Widget noAccount() {
+    return Container(
+      padding: EdgeInsets.only(top: 10.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text(
+            "Don't have an account?",
           ),
-          width: 100.0,
-          height: 1.0,
-        ),
-        Padding(
-          padding: EdgeInsets.only(left: 15.0, right: 15.0),
-          child: Text(
-            "Or",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 16.0,
+          SizedBox(
+            width: 10.0,
+          ),
+          FlatButton(
+            onPressed: () {
+              Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return RegisterPage();
+                  },
+                ),
+                (Route<dynamic> route) => false,
+              );
+            },
+            child: Text(
+              'Register',
             ),
-          ),
-        ),
-        Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [
-                  Colors.black,
-                  Colors.black12,
-                ],
-                begin: FractionalOffset(0.0, 0.0),
-                end: FractionalOffset(1.0, 1.0),
-                stops: [0.0, 1.0],
-                tileMode: TileMode.clamp),
-          ),
-          width: 100.0,
-          height: 1.0,
-        ),
-      ],
-    );
-  }
-
-  Widget fbgoogle() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Padding(
-          padding: EdgeInsets.only(top: 10.0, right: 40.0),
-          child: GestureDetector(
-            onTap: () {},
-            child: Container(
-              padding: EdgeInsets.all(15.0),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.black12,
-              ),
-              child: Icon(
-                FontAwesomeIcons.facebookF,
-                color: Color(0xFF0084ff),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+              side: BorderSide(
+                color: Colors.redAccent,
               ),
             ),
           ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(top: 10.0),
-          child: GestureDetector(
-            onTap: () {},
-            child: Container(
-              padding: EdgeInsets.all(15.0),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.black12,
-              ),
-              child: Icon(
-                FontAwesomeIcons.google,
-                color: Color(0xFF0084ff),
-              ),
-            ),
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

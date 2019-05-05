@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../mainpage/main_page.dart';
+import 'login_page.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -25,30 +26,30 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Color.fromRGBO(255, 255, 255, 1.0),
-        borderRadius: BorderRadius.only(
-          bottomRight: Radius.circular(5.0),
-          bottomLeft: Radius.circular(5.0),
-        ),
-      ),
-      padding: EdgeInsets.symmetric(horizontal: 10.0),
-      child: Form(
-        key: regFormKey,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            usernameField(),
-            emailField(),
-            passwordField(),
-            confirmPasswordField(),
-            SizedBox(
-              height: 10.0,
+    return Scaffold(
+      body: ListView(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.fromLTRB(20.0, 100.0, 20.0, 0.0),
+            child: Form(
+              key: regFormKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  usernameField(),
+                  emailField(),
+                  passwordField(),
+                  confirmPasswordField(),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  submitButton(),
+                  hasAccount(),
+                ],
+              ),
             ),
-            submitButton(),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -170,12 +171,13 @@ class _RegisterPageState extends State<RegisterPage> {
       onPressed: () {
         if (regFormKey.currentState.validate() && password == confirmPassword) {
           regFormKey.currentState.save();
-          Navigator.of(context).pushReplacement(
+          Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
               builder: (BuildContext context) {
                 return MainPage();
               },
             ),
+            (Route<dynamic> route) => false,
           );
         } else {
           setState(() {
@@ -183,6 +185,43 @@ class _RegisterPageState extends State<RegisterPage> {
           });
         }
       },
+    );
+  }
+
+  Widget hasAccount() {
+    return Container(
+      padding: EdgeInsets.only(top: 10.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text(
+            "Already have an account?",
+          ),
+          SizedBox(
+            width: 10.0,
+          ),
+          FlatButton(
+            onPressed: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return LoginPage();
+                  },
+                ),
+              );
+            },
+            child: Text(
+              'Login',
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+              side: BorderSide(
+                color: Colors.redAccent,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
