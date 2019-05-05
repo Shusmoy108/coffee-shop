@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class AddPoint extends StatelessWidget {
+  int score;
+  final void Function() scanCode;
+  final void Function() showDialog;
+  AddPoint({this.score, this.scanCode, this.showDialog});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -58,7 +63,7 @@ class AddPoint extends StatelessWidget {
                 iconSize: 35.0,
                 color: Colors.red[400],
                 icon: Icon(Icons.camera_alt),
-                onPressed: () {},
+                onPressed: score == 12 ? showDialog : scanCode,
               ),
             ),
           ),

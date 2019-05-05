@@ -1,10 +1,88 @@
 import 'package:flutter/material.dart';
+import 'package:qrcode_reader/qrcode_reader.dart';
 import 'todays_offer.dart';
 import 'personal_record.dart';
 import 'add_point.dart';
-import 'point_widget.dart';
+import '../giftpage/loyalty_card_ui.dart';
+import 'favorite_items.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int score = 12;
+  String barcode = '';
+
+  showClaimConfirmDialog() {
+    if (score == 12) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Are you sure?'),
+            content: SingleChildScrollView(
+              child: Text(
+                'Please click on the confirm button to claim your free drink.',
+              ),
+            ),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('Confirm'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  this.setState(() {
+                    score = 0;
+                  });
+                },
+              ),
+              FlatButton(
+                child: Text(
+                  'Cancel',
+                  style: TextStyle(
+                    color: Colors.redAccent,
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    }
+  }
+
+  showSlotFullDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Can not add score'),
+          content: SingleChildScrollView(
+            child: Text(
+              'Please claim your free drink first.',
+            ),
+          ),
+          actions: <Widget>[
+            FlatButton(
+              child: Text(
+                'Dismiss',
+                style: TextStyle(
+                  color: Colors.redAccent,
+                ),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,17 +106,24 @@ class HomePage extends StatelessWidget {
                 SizedBox(
                   height: 50,
                 ),
-                PointWidget(),
+                LoyaltyCardUi(
+                  score: score,
+                  showDialog: showClaimConfirmDialog,
+                ),
                 SizedBox(
                   height: 20,
                 ),
-                AddPoint(),
-                Container(
-                  height: 300,
-                  width: MediaQuery.of(context).size.width,
-                  child: Center(
-                    child: Text('এইখানে আর কি কি অ্যাড করা যায় বলিস'),
-                  ),
+                AddPoint(
+                  score: score,
+                  scanCode: scan,
+                  showDialog: showSlotFullDialog,
+                ),
+                SizedBox(
+                  height: 50.0,
+                ),
+                FavoriteItems(),
+                SizedBox(
+                  height: 50.0,
                 ),
               ],
             ),
@@ -46,5 +131,19 @@ class HomePage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future scan() async {
+    try {
+      String barcode = await QRCodeReader().scan();
+      setState(() {
+        this.barcode = "Result: $barcode";
+        this.score++;
+      });
+    } catch (e) {
+      setState(() {
+        this.barcode = 'Error: $e';
+      });
+    }
   }
 }
