@@ -9,13 +9,24 @@ class LoginRegisterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        decoration: new BoxDecoration(
+          image: new DecorationImage(
+            image: new ExactAssetImage('images/frontpage.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
         //color: Color.fromRGBO(20, 20, 20, 1.0),
         child: ListView(
           children: <Widget>[
-            imageWidget(context),
-            logRegButtons(context),
-            stylishOR(),
-            fbgoogle(context),
+            textbuilder(),
+            Padding(
+              padding: EdgeInsets.only(top: 230),
+            ),
+            //imageWidget(context),
+            logregisterbutton(context),
+            //logRegButtons(context),
+            //stylishOR(),
+            //fbgoogle(context),
           ],
         ),
       ),
@@ -29,10 +40,22 @@ class LoginRegisterPage extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-            'images/starbucks.jpg',
+            'images/frontpage.jpg',
           ),
           fit: BoxFit.fill,
         ),
+      ),
+    );
+  }
+
+  Widget stylishText(text, size) {
+    return Text(
+      text,
+      style: TextStyle(
+        fontSize: size,
+        //fontWeight: FontWeight.bold,
+        color: Colors.white70,
+        fontFamily: 'Merienda',
       ),
     );
   }
@@ -117,6 +140,111 @@ class LoginRegisterPage extends StatelessWidget {
           height: 1.0,
         ),
       ],
+    );
+  }
+
+  Widget textbuilder() {
+    return Container(
+      child: Column(
+        children: <Widget>[
+          stylishText('Earn Free', 70.0),
+          stylishText('Treats', 70.0),
+          stylishText('Register today and get', 20.0),
+          stylishText('100 points(\$1) on us!', 20.0),
+        ],
+      ),
+    );
+  }
+
+  Widget logregisterbutton(context) {
+    return Container(
+      padding: EdgeInsets.only(top: 20.0),
+      child: Column(
+        children: <Widget>[
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return LoginPage();
+                  },
+                ),
+              );
+            },
+            child: Container(
+              width: 200,
+              height: 40,
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(220, 20, 60, 0.8),
+                borderRadius: BorderRadius.circular(30.0),
+                boxShadow: [
+                  //BoxShadow(color: Colors.grey, offset: Offset(1, 2)),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'Login',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15.0,
+                        fontFamily: 'Merienda'),
+                  ),
+                  SizedBox(
+                    width: 30.0,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 20.0,
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return RegisterPage();
+                  },
+                ),
+              );
+            },
+            child: Container(
+              width: 200,
+              height: 40,
+              decoration: BoxDecoration(
+                color: Colors.black87,
+                //color: Color.fromRGBO(220, 20, 60, 0.8),
+                borderRadius: BorderRadius.circular(30.0),
+                boxShadow: [
+                  //BoxShadow(color: Colors.grey, offset: Offset(1, 2)),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'Register',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15.0,
+                        fontFamily: 'Merienda'),
+                  ),
+                  SizedBox(
+                    width: 10.0,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          stylishText('I forgot my password >', 15.0)
+          
+        ],
+      ),
     );
   }
 

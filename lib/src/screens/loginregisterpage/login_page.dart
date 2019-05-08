@@ -23,15 +23,22 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
   }
 
   void login() {
-    if (email == 'ab@xy.com' && password == '12345') {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (BuildContext context) {
-            return MainPage();
-          },
-        ),
-      );
-    }
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (BuildContext context) {
+          return MainPage();
+        },
+      ),
+    );
+    // if (email == 'ab@xy.com' && password == '12345') {
+    //   Navigator.of(context).pushReplacement(
+    //     MaterialPageRoute(
+    //       builder: (BuildContext context) {
+    //         return MainPage();
+    //       },
+    //     ),
+    //   );
+    // }
   }
 
   @override

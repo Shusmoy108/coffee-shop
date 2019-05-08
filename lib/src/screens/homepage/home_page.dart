@@ -98,7 +98,10 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                TodaysOffer(),
+                LoyaltyCardUi(
+                  score: score,
+                  showDialog: showClaimConfirmDialog,
+                ),
                 SizedBox(
                   height: 30,
                 ),
@@ -106,10 +109,7 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 50,
                 ),
-                LoyaltyCardUi(
-                  score: score,
-                  showDialog: showClaimConfirmDialog,
-                ),
+                TodaysOffer(),
                 SizedBox(
                   height: 20,
                 ),
