@@ -66,7 +66,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                       SizedBox(
                         height: 10.0,
                       ),
-                      submitButton(),
+                      loginbutton(),
                       forgetPassowrd(),
                       noAccount(),
                     ],
@@ -149,11 +149,52 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
     );
   }
 
+  Widget loginbutton() {
+    return InkWell(
+      onTap: () {
+        if (loginFormKey.currentState.validate()) {
+          loginFormKey.currentState.save();
+          login();
+        } else {
+          setState(() {
+            _autovalidateLoginform = true;
+          });
+        }
+      },
+      child: Container(
+        width: 100,
+        height: 40,
+        decoration: BoxDecoration(
+          color: Color.fromRGBO(220, 20, 60, 0.8),
+          borderRadius: BorderRadius.circular(30.0),
+          boxShadow: [
+            //BoxShadow(color: Colors.grey, offset: Offset(1, 2)),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Login',
+              style: TextStyle(
+                  color: Colors.white, fontSize: 15.0, fontFamily: 'Merienda'),
+            ),
+            SizedBox(
+              width: 0.0,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget submitButton() {
-    return RaisedButton.icon(
-      icon: Icon(Icons.navigate_next),
-      label: Text('Login'),
+    return RaisedButton(
+      //icon: Icon(Icons.navigate_next),
+      child: Text('Login'),
       color: Color.fromRGBO(220, 20, 60, 0.8),
+
       textColor: Colors.white,
       onPressed: () {
         if (loginFormKey.currentState.validate()) {
@@ -208,7 +249,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
               );
             },
             child: Text(
-              'Register',
+              'Sign Up',
             ),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.0),

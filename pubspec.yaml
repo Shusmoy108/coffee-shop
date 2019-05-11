@@ -29,13 +29,11 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -43,57 +41,58 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-  - images/starbucks.jpg
-  - images/expresso.jpg
-  - images/espresso.jpg
-  - images/brewed.jpg
-  - images/bootledrink.jpg
-  - images/hotchoco.jpg
-  - images/icedtea.jpg
-  - images/hottea.jpg
-  - images/blended.jpg
-  - images/icedcoffee.jpg
-  - images/bakery.jpg
-  - images/hotbreak.jpg
-  - images/lunch.jpg
-  - images/freshfruit.jpg
-  - images/snacks.jpg
-  - images/wholebean.jpg
-  - images/escapsule.jpg
-  - images/shopbag.jpg
-  - images/caffamericano.jpg
-  - images/caflatte.jpg
-  - images/caramelmachiato.jpg
-  - images/classicecapp.jpg
-  - images/coldfoamiceapp.jpg
-  - images/espressomahciato.jpg
-  - images/flatwhite.jpg
-  - images/icedcaflatte.jpg
-  - images/icedwhitechocomocha.jpg
-  - images/lattemachiato.jpg
-  - images/whitechocomocha.jpg
-  - images/caflattebig.jpg
-  - images/oahead.jpg
-  - images/cc0.png
-  - images/cc1.png
-  - images/cc2.png
-  - images/cc3.png
-  - images/cc4.png
-  - images/cc5.png
-  - images/cc6.png
-  - images/cc7.png
-  - images/cc8.png
-  - images/cc9.png
-  - images/cc10.png
-  - images/cc11.png
-  - images/cc12.png
-  - images/lcard.jpg
-  - images/logback.jpg
-  - images/pwalkicon.png
-  - images/ccupicon.png
-  - images/ordericon.png
-  - images/coffeesmoke.gif
-  - images/frontpage.jpg
+    - images/starbucks.jpg
+    - images/offer.jpg
+    - images/expresso.jpg
+    - images/espresso.jpg
+    - images/brewed.jpg
+    - images/bootledrink.jpg
+    - images/hotchoco.jpg
+    - images/icedtea.jpg
+    - images/hottea.jpg
+    - images/blended.jpg
+    - images/icedcoffee.jpg
+    - images/bakery.jpg
+    - images/hotbreak.jpg
+    - images/lunch.jpg
+    - images/freshfruit.jpg
+    - images/snacks.jpg
+    - images/wholebean.jpg
+    - images/escapsule.jpg
+    - images/shopbag.jpg
+    - images/caffamericano.jpg
+    - images/caflatte.jpg
+    - images/caramelmachiato.jpg
+    - images/classicecapp.jpg
+    - images/coldfoamiceapp.jpg
+    - images/espressomahciato.jpg
+    - images/flatwhite.jpg
+    - images/icedcaflatte.jpg
+    - images/icedwhitechocomocha.jpg
+    - images/lattemachiato.jpg
+    - images/whitechocomocha.jpg
+    - images/caflattebig.jpg
+    - images/oahead.jpg
+    - images/cc0.png
+    - images/cc1.png
+    - images/cc2.png
+    - images/cc3.png
+    - images/cc4.png
+    - images/cc5.png
+    - images/cc6.png
+    - images/cc7.png
+    - images/cc8.png
+    - images/cc9.png
+    - images/cc10.png
+    - images/cc11.png
+    - images/cc12.png
+    - images/lcard.jpg
+    - images/logback.jpg
+    - images/pwalkicon.png
+    - images/ccupicon.png
+    - images/ordericon.png
+    - images/coffeesmoke.gif
+    - images/frontpage.webp
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
 
@@ -119,7 +118,6 @@ flutter:
       fonts:
         - asset: fonts/Merienda-Regular.ttf
         - asset: fonts/Merienda-Bold.ttf
-
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages

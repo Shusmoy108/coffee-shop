@@ -11,7 +11,7 @@ class LoginRegisterPage extends StatelessWidget {
       body: Container(
         decoration: new BoxDecoration(
           image: new DecorationImage(
-            image: new ExactAssetImage('images/frontpage.jpg'),
+            image: new ExactAssetImage('images/frontpage.webp'),
             fit: BoxFit.cover,
           ),
         ),
@@ -20,7 +20,7 @@ class LoginRegisterPage extends StatelessWidget {
           children: <Widget>[
             textbuilder(),
             Padding(
-              padding: EdgeInsets.only(top: 230),
+              padding: EdgeInsets.only(top: 200),
             ),
             //imageWidget(context),
             logregisterbutton(context),
@@ -40,7 +40,7 @@ class LoginRegisterPage extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-            'images/frontpage.jpg',
+            'images/frontpage.webp',
           ),
           fit: BoxFit.fill,
         ),
@@ -74,7 +74,7 @@ class LoginRegisterPage extends StatelessWidget {
                 }),
               );
             },
-            child: Text('Login'),
+            child: Center(child: Text('Login')),
             color: Color.fromRGBO(220, 20, 60, 0.8),
             textColor: Colors.white,
           ),
@@ -193,7 +193,7 @@ class LoginRegisterPage extends StatelessWidget {
                         fontFamily: 'Merienda'),
                   ),
                   SizedBox(
-                    width: 30.0,
+                    width: 0.0,
                   ),
                 ],
               ),
@@ -228,21 +228,20 @@ class LoginRegisterPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'Register',
+                    'Sign Up',
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 15.0,
                         fontFamily: 'Merienda'),
                   ),
                   SizedBox(
-                    width: 10.0,
+                    width: 0.0,
                   ),
                 ],
               ),
             ),
           ),
           stylishText('I forgot my password >', 15.0)
-          
         ],
       ),
     );

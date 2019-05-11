@@ -9,7 +9,7 @@ class TodaysOffer extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-            'images/expresso.jpg',
+            'images/offer.jpg',
           ),
           fit: BoxFit.fill,
         ),
@@ -23,49 +23,49 @@ class TodaysOffer extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                Container(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Today's Offer",
-                    style: TextStyle(
-                        color: Colors.yellowAccent,
-                        fontSize: 30.0,
-                        fontFamily: 'Merienda'),
-                  ),
-                ),
-                SizedBox(
-                  height: 10.0,
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  child: Container(
-                    //color: Colors.greenAccent,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-                    child: Text(
-                      "Espresso",
-                      style: TextStyle(
-                        color: Colors.lightGreenAccent,
-                        fontSize: 25.0,
-                        fontFamily: 'Merienda',
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10.0,
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "150 Tk",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 35.0,
-                      fontFamily: 'Playball',
-                    ),
-                  ),
-                ),
+                // Container(
+                //   alignment: Alignment.center,
+                //   child: Text(
+                //     "Today's Offer",
+                //     style: TextStyle(
+                //         color: Colors.yellowAccent,
+                //         fontSize: 30.0,
+                //         fontFamily: 'Merienda'),
+                //   ),
+                // ),
+                // SizedBox(
+                //   height: 10.0,
+                // ),
+                // Container(
+                //   alignment: Alignment.center,
+                //   child: Container(
+                //     //color: Colors.greenAccent,
+                //     padding:
+                //         EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
+                //     child: Text(
+                //       "Espresso",
+                //       style: TextStyle(
+                //         color: Colors.lightGreenAccent,
+                //         fontSize: 25.0,
+                //         fontFamily: 'Merienda',
+                //       ),
+                //     ),
+                //   ),
+                // ),
+                // SizedBox(
+                //   height: 10.0,
+                // ),
+                // Container(
+                //   alignment: Alignment.center,
+                //   child: Text(
+                //     "150 Tk",
+                //     style: TextStyle(
+                //       color: Colors.white,
+                //       fontSize: 35.0,
+                //       fontFamily: 'Playball',
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),

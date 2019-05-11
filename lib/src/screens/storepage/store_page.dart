@@ -38,9 +38,9 @@ class _StorePageState extends State<StorePage> {
       subtitle: Text(
         "Dhaka",
         style: TextStyle(
-          fontSize: 15,
+          fontSize: 12,
           //fontWeight: FontWeight.bold,
-          color: Colors.black87,
+          color: Colors.grey,
           fontFamily: 'Lobster',
         ),
       ),
@@ -75,7 +75,7 @@ class _StorePageState extends State<StorePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Location'),
+        title: Text('Shop List'),
         backgroundColor: Color.fromRGBO(220, 20, 60, 1.0),
         elevation: 0.0,
       ),
@@ -89,22 +89,22 @@ class _StorePageState extends State<StorePage> {
                 long: currentLongitude,
               ),
             ),
-            Center(
-              child: stylishText("Shop List", 40.0),
-            ),
+            // Center(
+            //   child: stylishText("Shop List", 40.0),
+            // ),
             Container(
-              height: MediaQuery.of(context).size.width * 0.45,
+              height: MediaQuery.of(context).size.width * 0.6305,
               child: ListView(
                 children: <Widget>[
-                  shop("StarBucks", 20.0),
-                  shop("Crimson Cup Coffee", 20.0),
-                  shop("NORTH END coffee roasters", 20.0),
-                  shop("Butlers Chocolate Café, Gulshan", 20.0),
-                  shop("The Coffee Bean & Tea Leaf", 20.0),
-                  shop("Gloria Jean's Coffees", 20.0),
-                  shop("Muno Cafe Bistro", 20.0),
-                  shop("Rio Coffee", 20.0),
-                  shop("Coffee Express", 20.0),
+                  shop("StarBucks", 18.0),
+                  shop("Crimson Cup Coffee", 18.0),
+                  shop("NORTH END coffee roasters", 18.0),
+                  shop("Butlers Chocolate Café, Gulshan", 18.0),
+                  shop("The Coffee Bean & Tea Leaf", 18.0),
+                  shop("Gloria Jean's Coffees", 18.0),
+                  shop("Muno Cafe Bistro", 18.0),
+                  shop("Rio Coffee", 18.0),
+                  shop("Coffee Express", 18.0),
                 ],
               ),
             )

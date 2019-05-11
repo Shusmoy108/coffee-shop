@@ -113,14 +113,14 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 20,
                 ),
-                AddPoint(
-                  score: score,
-                  scanCode: scan,
-                  showDialog: showSlotFullDialog,
-                ),
-                SizedBox(
-                  height: 50.0,
-                ),
+                // AddPoint(
+                //   score: score,
+                //   scanCode: scan,
+                //   showDialog: showSlotFullDialog,
+                // ),
+                // SizedBox(
+                //   height: 50.0,
+                // ),
                 FavoriteItems(),
                 SizedBox(
                   height: 50.0,
@@ -129,6 +129,14 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: score == 12 ? showSlotFullDialog : scan,
+        label: Text(
+          'Add Score',
+        ),
+        icon: Icon(Icons.camera_alt),
+        backgroundColor: Color.fromRGBO(220, 20, 60, 0.8),
       ),
     );
   }

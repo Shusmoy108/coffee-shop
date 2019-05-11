@@ -43,7 +43,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   SizedBox(
                     height: 10.0,
                   ),
-                  submitButton(),
+                  signupbutton(),
+                  //submitButton(),
                   hasAccount(),
                 ],
               ),
@@ -159,6 +160,53 @@ class _RegisterPageState extends State<RegisterPage> {
       onSaved: (String value) {
         confirmPassword = value;
       },
+    );
+  }
+
+  Widget signupbutton() {
+    return InkWell(
+      onTap: () {
+        if (regFormKey.currentState.validate() && password == confirmPassword) {
+          regFormKey.currentState.save();
+          Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(
+              builder: (BuildContext context) {
+                return MainPage();
+              },
+            ),
+            (Route<dynamic> route) => false,
+          );
+        } else {
+          setState(() {
+            _autovalidateRegform = true;
+          });
+        }
+      },
+      child: Container(
+        width: 100,
+        height: 40,
+        decoration: BoxDecoration(
+          color: Color.fromRGBO(220, 20, 60, 0.8),
+          borderRadius: BorderRadius.circular(30.0),
+          boxShadow: [
+            //BoxShadow(color: Colors.grey, offset: Offset(1, 2)),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Sign Up',
+              style: TextStyle(
+                  color: Colors.white, fontSize: 15.0, fontFamily: 'Merienda'),
+            ),
+            SizedBox(
+              width: 0.0,
+            ),
+          ],
+        ),
+      ),
     );
   }
 
